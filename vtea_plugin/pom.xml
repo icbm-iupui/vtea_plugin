@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vtea-user</groupId>
+    <artifactId>vtea-plugin</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>VTEA Plugin</name>
+    <description>A Maven project for VTEA plugins</description>
+    <url>https://mycompany.com/imagej/thenumber42/</url>
+    <inceptionYear>2011</inceptionYear>
+    <organization>
+        <name>Indiana University</name>
+        <url>https://icbm.iu.edu</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Simplified BSD License</name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <!-- See https://imagej.net/Team -->
+        <developer>
+            <id>VTEAdeveloper</id>
+            <name>VTEA developer</name>
+            <url></url>
+            <roles>
+                <role>founder</role>
+                <role>lead</role>
+                <role>developer</role>
+                <role>debugger</role>
+                <role>reviewer</role>
+                <role>support</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>NA</name>
+            <url>NA</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <properties>
+                <id>na</id>
+            </properties>
+        </contributor>
+    </contributors>
+
+    <mailingLists>
+        <mailingList>
+            <name>Image.sc Forum</name>
+            <archive>https://forum.image.sc/tags/imagej</archive>
+        </mailingList>
+    </mailingLists>
+
+    <scm>
+        <connection>scm:git:git://github.com/imagej/example-imagej-command</connection>
+        <developerConnection>scm:git:git@github.com:imagej/example-imagej-command</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/imagej/example-imagej-command</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/imagej/example-imagej-command/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>None</system>
+    </ciManagement>
+
+    <properties>
+        <package-name>edu.mine</package-name>
+        <main-class></main-class>
+        <license.licenseName>bsd_2</license.licenseName>
+        <license.copyrightOwners>My Company, Inc.</license.copyrightOwners>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.build.sourceDirectory}</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>${basedir}/src/test/resources</directory>
+            </testResource>
+            <testResource>
+                <directory>${project.build.testSourceDirectory}</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-install-plugin</artifactId>
+    <version>2.5.2</version>
+    <executions>
+        <execution>
+            <phase>initialize</phase>
+            <goals>
+                <goal>install-file</goal>
+            </goals>
+            <configuration>
+                <file>../vtea_plugin/lib/vtea-1.0.0-vtea.jar</file>
+            <groupId>icbm-iupui</groupId>
+            <artifactId>vtea</artifactId>
+            <version>1.0.0</version>
+                <packaging>jar</packaging>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>icbm-iupui</groupId>
+            <artifactId>vtea</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>scijava.public</id>
+            <url>https://maven.scijava.org/content/groups/public</url>
+        </repository>
+    </repositories>
+</project>
